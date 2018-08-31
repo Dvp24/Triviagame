@@ -64,6 +64,7 @@ var counter = 9;
 var t = 0;
 var timeUp;
 var selected;
+var wins = 0;
 
 $(".Rap").on('click', function () {
   $(".overlay").html("<div class='overlay-bg'><div class='gameScreen text-center'><div ><img class='top' src='assets/images/tangled_top.jpeg'></div><div class='playArea'><div class='timer'>10</div><div class='questionArea'></div><div class='optionArea mt-5'><div class='opt1 optClick'></div><div class='opt2 optClick'></div><div class='opt3 text-center optClick'></div><div class='opt4 optClick'></div></div></div></div></div>");
@@ -71,8 +72,7 @@ $(".Rap").on('click', function () {
 
 })
 
-function nextQuestion(){
-  
+function nextQuestion(){ 
   selected = Rapunzel[questionIndex];
   $(".questionArea").html(selected.que);
   $(".opt1").html(selected.options[0]);
@@ -87,11 +87,8 @@ function nextQuestion(){
   counter = 10;
   t = setInterval(time, 1000);
   optUser();
-
   questionIndex++;
-
 }
-
 
 function time() {
   counter--;
@@ -99,13 +96,13 @@ function time() {
   console.log(counter);
   if (counter == 0) {
     stop();
-    console.log("times up");
-    $(".playArea").html("The correct answer is: "+selected.correct);
+    $(".optionArea").html("Time's Up.. <br><br>The correct answer is <br> "+selected.correct);
   }else{
     console.log("guess the answer");
   }
 
 }
+
 function stop() {
   clearInterval(t);
   if(questionIndex <10){
@@ -114,11 +111,12 @@ function stop() {
       $(".overlay").html("<div class='overlay-bg'><div class='gameScreen text-center'><div ><img class='top' src='assets/images/tangled_top.jpeg'></div><div class='playArea'><div class='timer'>10</div><div class='questionArea'></div><div class='optionArea mt-5'><div class='opt1 optClick'></div><div class='opt2 optClick'></div><div class='opt3 text-center optClick'></div><div class='opt4 optClick'></div></div></div></div></div>");
   
       nextQuestion();
-    },5000);
+    },2000);
   }else{
-
+    finalScore();
   }
 }
+
 function optUser(){
   $(".optClick").on('click',function(){
     console.log("you selected an option");
@@ -126,16 +124,27 @@ function optUser(){
     console.log("value "+value);
     if(value == selected.correct){
       console.log("right!!");
-      $(".playArea").html("right!!"); 
+      wins++;
+      $(".optionArea").html("Right Answer!! <br><br> Your score is <br>"+wins+"/10"); 
       stop();
     }else{
-      console.log("wrong answer")
-      $(".playArea").html("wrong answer");
+      console.log("Wrong answer")
+      $(".optionArea").html("Wrong answer <br><br> The correct answer is <br> "+selected.correct);
       stop();
-
     }
-   
-
   })
+}
+function finalScore(){
+  $(".playArea").html(" <br><br><br>Your score is <br>"+wins+"/10<br><br> <div class = 'finalBtnHome'>Home</div>  <div class = 'finalBtnReset '>Reset</div>");
+  $(".plyArea").append("");
+  $(".plyArea").append("");
+  $(".finalBtnHome").on('click',function(){
+    $(".finalBtnHome").attr('href','/index.html');
+  })
+  $(".finalBtnReset").on('click',function(){
+      $(".overlay").html("<div class='overlay-bg'><div class='gameScreen text-center'><div ><img class='top' src='assets/images/tangled_top.jpeg'></div><div class='playArea'><div class='timer'>10</div><div class='questionArea'></div><div class='optionArea mt-5'><div class='opt1 optClick'></div><div class='opt2 optClick'></div><div class='opt3 text-center optClick'></div><div class='opt4 optClick'></div></div></div></div></div>");
+      nextQuestion()
+  })
+
 }
 
