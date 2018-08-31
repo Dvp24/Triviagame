@@ -1,7 +1,117 @@
 .mainGame{
-  background-image: url("https://s3.envato.com/files/111553211/questionMark_blue_red.jpg");
+  background-image: url("https://static.vecteezy.com/system/resources/previews/000/101/237/large_2x/free-abstract-background-11-vector.jpg");
   background-size: cover;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
-h1{
-  color: aquamarine;
+.color-gold{
+  margin-top: 10px;
+  background-color: gold;
+  width: 100%;
+  height: 50px;
+}
+.logo-bg{
+  width: 150px;
+  height: 60px;
+  position: absolute;
+  z-index: 3;
+  background-color: #13131f;
+  margin-left: 40px;  
+}
+.logo{
+  width: 100px;
+  height: 30px;
+}
+.mainBody{
+  width: 70%;
+  height: 85%;
+  margin: auto;
+}
+
+h5{
+  color: #22662e;
+  font-family: cursive;
+  font-weight: bold;
+}
+h6{
+  color: firebrick;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.gameArea{
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
+.margin{
+  width: 90%;
+  height: 80%;
+  margin: auto;
+}
+.grid11, .grid12{
+  float: left;
+  width: 200px;
+  height: 150px;
+  margin: 0px 30px 30px 0px;
+
+}
+.btn-size{
+  width: 100px;
+  height: 30px;
+}
+.btn1{
+  position: absolute;
+  left: 80px;
+  top: 90px;
+}
+.btn2{
+  position: absolute;
+  left: 310px;
+  top: 90px;
+}
+
+.gameScreen{
+  margin: auto;
+  margin-top: 30px;
+  width: 400px;
+  height: 580px;
+  background-color: #ffffff;
+  /* position: fixed; */
+  color: #000000;
+  z-index: 90;
+  visibility: visible;
+  /* opacity: 1.0; */
+}
+
+.gameScreen:after{
+  content:"";
+  background: #000;
+  opacity: .85;
+  position: fixed;
+  z-index: -50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.top{
+  height: 200px;
+  width: 400px;
+}
+
+.opt1, .opt2, .opt3, .opt4{
+  margin: 10px auto;
+  width: 60%;
+  border: 1px solid purple;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.optClick:hover{
+  background-color: purple;
+}
+.questionArea{
+  font-size: 20px;
 }
