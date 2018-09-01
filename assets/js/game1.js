@@ -145,6 +145,5 @@ function finalScore(){
       $(".overlay").html("<div class='overlay-bg'><div class='gameScreen text-center'><div ><img class='top' src='assets/images/tangled_top.jpeg'></div><div class='playArea'><div class='timer'>10</div><div class='questionArea'></div><div class='optionArea mt-5'><div class='opt1 optClick'></div><div class='opt2 optClick'></div><div class='opt3 text-center optClick'></div><div class='opt4 optClick'></div></div></div></div></div>");
       nextQuestion()
   })
-
 }
-
+// Alladin starts here
