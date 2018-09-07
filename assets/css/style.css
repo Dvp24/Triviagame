@@ -115,4 +115,16 @@ h6{
 }
 .questionArea{
   font-size: 20px;
+}.cross{
+  background-color: #000;
+  opacity: 0.7;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 45px;
+  right: 480px;
+  color: #fff;
+  border-radius: 25%;
+
+
 }
