@@ -218,7 +218,7 @@ function nextQuestionA(){
   $(".opt4").html(selected.options[3]);
   $(".opt4").attr('data','13');
   counter = 10;
-  t = setInterval(time, 1000);
+  t = setInterval(timeA, 1000);
   optUserA();
   questionIndex++;
 }
